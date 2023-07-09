@@ -1,0 +1,55 @@
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //人类
+            IFlayable i = new Person();
+            i.Fly();
+
+            IFlayable ss = new Student();
+            ss.Fly();
+            //学生
+            Student s = new Student();
+            s.Fly();
+            s.chlss();
+            Console.ReadKey();
+
+        }
+
+    }
+
+    //人类
+    public class Person : IFlayable
+    {
+        public void Fly()
+        {
+            Console.WriteLine("接口的飞方法");
+        }
+
+        public void chlss()
+        {
+            Console.WriteLine("人类自己的吃喝拉撒睡");
+        }
+        public void Jg()
+        {
+            Console.WriteLine("人类会发射激光了");
+        }
+    }
+
+    //学生
+    public class Student :Person
+    {
+    }
+    
+    //接口
+    public interface IFlayable
+    {
+        void Fly();
+        void Jg();
+
+    }
+   
+
+}
