@@ -1,0 +1,305 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 练习题1_5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("请输入你的成绩：");
+            //int num = Convert.ToInt32(Console.ReadLine());
+            //while (true)
+            //{
+            //    if (num == 101)
+            //    {
+            //        Console.WriteLine("程序结束");
+            //        break;
+
+            //    }
+            //    if (num <= 100 && num >= 0)
+            //    {
+            //        String s = getCheng(num);
+            //        Console.WriteLine("您属于：" + s);
+
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("您输入的成绩有误，请重新输入");
+            //        num = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //}
+
+            //for (int i = 1; i <=9; i++)
+            //{
+            //    for (int j = i; j <=9; j++)
+            //    {
+            //        Console.WriteLine(i+"*"+j+"="+i*j);
+            //    }
+            //}
+
+            //   int[] nums = new int[50];
+            //   Random r = new Random();
+            //   for (int i = 0; i < nums.Length; i++)
+            //   {
+            //       nums[i] = r.Next(1, 10);
+            //   }
+            //   Console.WriteLine("请输入一个数字：");
+            //int  num= Convert.ToInt32(Console.ReadLine());
+            //   for (int i = 0; i < nums.Length; i++)
+            //   {
+            //       Console.Write(nums[i] + "\t");
+            //       if ((i+1)%num==0)
+            //       {
+            //           Console.WriteLine();
+            //       }
+
+            //   }
+
+            //  Console.WriteLine("请输入一个字符串：");
+            //  String str = Console.ReadLine();
+            //Console.WriteLine( getStr(str));
+
+            //int a = 10;
+            //int b = 20;
+
+            //a = a - b; //a=-10
+            //b = a + b; //b=10;
+            //a = b - a;
+            //Console.WriteLine(a + "," + b);
+
+            ////ref 将值传递变成引用传递
+            //getNum(ref a, ref b);
+            //Console.WriteLine(a + "," + b);
+
+            //int max = getMax(1, 2, 3, 4, 5);
+            //Console.WriteLine(max);
+            //Console.ReadKey();
+
+            //while (true)
+            //{
+            //    Console.WriteLine("请输入一个数字：");
+            //    int number = int.Parse(Console.ReadLine());
+            //    Boolean b = isPrime(number);
+            //    Console.WriteLine(b);
+            //    Console.ReadKey();
+
+
+            //Console.WriteLine(GetPrimeNumber());
+            // Console.ReadKey();
+
+            //String[] names = { "马克", "布莱恩特", "詹姆斯", "杜兰特kd", "剋不爱恩特" };
+            //Console.WriteLine(getNames(names));
+            //Console.ReadKey();
+
+            //  int[] nums = { 1, 3, 5,93, 7, 9, 2, 4, 6, 8,99,101};
+            //  Double avg = GetAvg(nums);
+            // //保留两位小数
+            //avg=  Convert.ToDouble(avg.ToString("0.00"));
+            // Console.WriteLine(avg);
+            //  Console.ReadKey();
+
+            //int[] nums = { 1, 3, 5, 93, 7, 9, 2, 4, 6, 8, 99, 101 };
+            //////升序
+            //Array.Sort(nums);
+            ////降序
+            //Array.Reverse(nums);
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    Console.WriteLine(nums[i]);
+            //}
+
+
+            //int[] nums = new int[30];
+            //Random r = new Random();
+            //int sum = 0;
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    nums[i] = r.Next(1, 101);
+            //    sum += nums[i];
+
+            //}
+            //Console.WriteLine(sum/nums.Length);
+            //Console.ReadKey();
+
+
+
+            //Console.ReadKey();
+
+            //for (int i = 0; i < nums.Length-1; i++)
+            //{
+            //    for (int j = 0; j < nums.Length-1-i; j++)
+            //    {
+            //        if (nums[j]>nums[j+1])
+            //        {
+            //            int temp = nums[j];
+            //            nums[j] = nums[j + 1];
+            //            nums[j + 1] = temp;
+            //        }
+            //    }
+            //}
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    Console.WriteLine(nums[i]);
+            //}
+
+            //String str = "   hello     world 你hao   世界    !    ";
+            ////去掉两端空格
+            //str=str.Trim();
+            ////把剩下的空格替换成一个空格
+            ////以' ' 分删除所有空格 返回字符串数组
+            //String [] strs=  str.Split(new char[] {' '},StringSplitOptions.RemoveEmptyEntries);
+            ////将每个元素中间以" "连接
+            //str =String.Join(" ", strs);
+            //Console.Write(str);
+            //Console.ReadKey();
+
+            List<String> list = new List<string>();
+            int num = 0;
+            while (true)
+            {
+                Console.WriteLine("请输入学生姓名：");
+                string str = Console.ReadLine();
+                
+                if (str == "quit")
+                {
+                    break;
+                }
+                list.Add(str);
+                num++;
+            }
+            int count = 0;
+            foreach (string s in list)
+            {
+                Console.WriteLine(s);
+                if (s[0]=='王')
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("一共"+num+"名学生,姓王的同学有"+count+"个");
+            Console.ReadKey();
+        }
+        public static double GetAvg(int[] nums)
+        {
+            double sum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+            }
+            return sum / nums.Length;
+        }
+
+        public static String getNames(String[] names)
+        {
+            String max = names[0];
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (names[i].Length > max.Length)
+                {
+                    max = names[i];
+                }
+            }
+            return max;
+        }
+        public static int GetPrimeNumber()
+        {
+
+            int sum = 0;
+            for (int i = 2; i <= 100; i++)
+            {
+                Boolean b = true;
+                for (int j = 2; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        b = false;
+                        break;
+                    }
+                }
+                if (b)
+                {
+                    sum += i;
+                }
+
+            }
+            return sum;
+        }
+
+
+        public static Boolean isPrime(int number)
+
+        {
+
+            if (number < 2)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 2; i < number; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+
+        }
+        public static int getMax(params int[] arr)
+        {
+            int max = arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+
+        public static void getNum(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        public static string getStr(String s)
+        {
+            //将 截取字符串从0索引一个字符变成小写加上截取字符串从1索引后面的字符串
+            return s.Substring(0, 1).ToLower() + s.Substring(1);
+        }
+        public static String getCheng(int num)
+        {
+            String s = "";
+            switch (num / 10)
+            {
+
+                case 10:
+                case 9:
+                    s = "优";
+                    break;
+                case 8:
+                    s = "良";
+                    break;
+                case 7:
+                case 6:
+                    s = "中";
+                    break;
+                default:
+                    s = "差";
+                    break;
+            }
+            return s;
+        }
+    }
+}
